@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Button, TextField } from "@material-ui/core";
 
 const TodoForm = ({addTodo}) => {
     const defualtTodo = {
@@ -20,8 +21,8 @@ const TodoForm = ({addTodo}) => {
         }
     }
     return <form onSubmit={handleSubmit}>
-        <input type="text" value={todo.task} onChange={handleChange}/>
-        <input type="submit" value="Add Todo"/>
+        <TextField label="Task" type="text" name="task" value={todo.task} onChange={handleChange}/>
+        <Button type="submit">Add Todo</Button>
     </form>
 }
 

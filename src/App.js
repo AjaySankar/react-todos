@@ -1,3 +1,4 @@
+import Typography from "@material-ui/core/Typography";
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import TodoList from './components/TodoList'
@@ -40,6 +41,9 @@ function App() {
 
   return (
     <div className="App">
+      <Typography style={{ padding: 16 }} variant="h1">
+        React Todo
+      </Typography>
       <header className="App-header">
         <TodoList todos={todos} deleteTodo={deleteTodo} toggleCompleted={toggleCompleted}/>
         <TodoForm addTodo={addTodo}/>
