@@ -5,12 +5,14 @@ import TodoForm from './components/TodoForm'
 
 function App() {
   const [todos, addTodos] = useState([])
-  const testTodos = [{'id': 1, 'task': 'Study 1', 'completed': true},{'id': 2, 'task': 'Study 2', 'completed': true}];
+  function addTodo(newTodo) {
+    addTodos([...todos, newTodo])
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <TodoList todos={testTodos}/>
-        <TodoForm/>
+        <TodoList todos={todos}/>
+        <TodoForm addTodo={addTodo}/>
       </header>
     </div>
   );
