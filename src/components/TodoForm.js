@@ -14,7 +14,7 @@ const TodoForm = ({addTodo}) => {
     function handleSubmit(e){
         e.preventDefault();
         const {task=""} = todo
-        if(task.length > 0) {
+        if(task.trim()) {
             addTodo({...todo, ...{id: uuidv4()}})
             setTodo({...defualtTodo})
         }
