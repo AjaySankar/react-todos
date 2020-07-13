@@ -8,10 +8,13 @@ function App() {
   function addTodo(newTodo) {
     addTodos([...todos, newTodo])
   }
+  function deleteTodo(todoId) {
+    addTodos(todos.filter(({id}) => id !== todoId))
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <TodoList todos={todos}/>
+        <TodoList todos={todos} deleteTodo={deleteTodo}/>
         <TodoForm addTodo={addTodo}/>
       </header>
     </div>
