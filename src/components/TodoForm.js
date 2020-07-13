@@ -20,9 +20,9 @@ const TodoForm = ({addTodo}) => {
             setTodo({...defualtTodo})
         }
     }
-    return <form onSubmit={handleSubmit}>
+    return <form className="todo-form" onSubmit={handleSubmit}>
         <TextField label="Task" type="text" name="task" value={todo.task} onChange={handleChange}/>
-        <Button type="submit">Add Todo</Button>
+        <Button type="submit" color="primary" variant="contained">Add Todo</Button>
     </form>
 }
 
